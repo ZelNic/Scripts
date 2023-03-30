@@ -23,12 +23,8 @@ namespace Recursion
             else
             {
                 total += numbers[numbers.Count - 1];
-                if (numbers.Count != 1)
-                {
-                    numbers.RemoveAt(numbers.Count - 1);
-                }
+                if (numbers.Count != 1) numbers.RemoveAt(numbers.Count - 1);                
                 Sum(numbers);
-
                 return total;
             }
         }
