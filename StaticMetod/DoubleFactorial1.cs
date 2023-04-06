@@ -2,7 +2,7 @@
 
 namespace StaticMetod
 {
-    internal class DoubleFactorial1
+    /*internal class DoubleFactorial1
     {
         public static int sum = 1;
         private static void Main()
@@ -55,5 +55,5 @@ namespace StaticMetod
             }
 
         }
-    }
+    }*/
 }
