@@ -2,7 +2,7 @@
 
 namespace StaticMetod
 {
-    internal class Program
+    /*internal class Factorial
     {
         public static int sum = 1;
         private static void Main()
@@ -28,5 +28,5 @@ namespace StaticMetod
             }
 
         }
-    }
+    }*/
 }
