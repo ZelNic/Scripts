@@ -44,9 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TaskClass.cs" />
-    <Compile Include="SquaresSum.cs" />
-    <Compile Include="DoubleFactorial1.cs" />
-    <Compile Include="Factorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

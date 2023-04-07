@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace StaticMetod
 {
@@ -245,13 +246,85 @@ namespace StaticMetod
     }
     #endregion
 
+    #region нахождение косинуса
+
+    public class TaskClass5
+    {
+        int a;
+        int b;
+        int c;
+        double cos;
+        public void ConsolWrite()
+        {
+            Console.WriteLine("Здравствуйте, для нахождения косисуна, пожалуйста, введите данные.");
+            Console.WriteLine("Введите длину наибольшей стороны треугольника: ");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите длину средней стороны треугольника: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите длины наименьшей стороны треугольника: ");
+            b = Convert.ToInt32(Console.ReadLine());
+
+
+            cos = (Math.Pow(c, 2) - Math.Pow(a, 2) - Math.Pow(b, 2)) / (-2 * a * b);
+        }
+
+        public void ShowResult()
+        {
+            Console.WriteLine("Косинус равняется: " + cos);
+        }
+    }
+
+    #endregion
+
+    #region Дискриминант
+
+    public class TaskClass6
+    {
+        public int a;
+        public int b;
+        public int c;
+
+        public void ConsolWrite()
+        {
+            Console.WriteLine("Если уравнение выглядит так ax^2 + bx + c = 0, то заполните данные.");
+            Console.WriteLine("Введите значение а.");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите значение b.");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите значение c.");
+            c = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void ShowResult()
+        {
+
+            double D = Math.Pow(b, 2) - 4 * a * c; 
+            if(D > 0)
+            {
+                double Res1 = (-b + Math.Sqrt(D)) / 2 * a; 
+                double Res2 = (-b - Math.Sqrt(D)) / 2 * a;
+                Console.WriteLine($"x_1 = {Res1}.");
+                Console.WriteLine($"x_2 = {Res2}.");                
+            }            
+            if (D == 0)
+            {
+                double Res1 = -b / 2 * a;
+                Console.WriteLine($"x = {Res1}.");
+            }
+            else Console.WriteLine("Нет решения.");
+
+        }
+
+    }
+    #endregion
+
 
 
     public class MyClass
     {
         private static void Main()
         {
-
+           
         }
 
     }
