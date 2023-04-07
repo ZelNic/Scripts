@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TaskClass.cs" />
     <Compile Include="SquaresSum.cs" />
     <Compile Include="DoubleFactorial1.cs" />
     <Compile Include="Factorial.cs" />
