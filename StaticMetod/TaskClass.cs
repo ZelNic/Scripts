@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace StaticMetod
 {
@@ -446,12 +447,53 @@ namespace StaticMetod
     }
     #endregion
 
+    #region Class11
+    public class Class11
+    {
+        private int _number;
+        private int indexNumber;
+        private int temp;
+        public int Number
+        {
+            get
+            {
+                return _number;
+            }
+            set { _number = value; }
+        }
+
+
+        public void AddToNumber(int range)
+        {
+            for (int i = 0; i < range; i++)
+            {
+                if (Number % 2 == 0 || temp == Number)
+                {
+                    Number++;
+                    indexNumber++;
+                    temp = Number;
+                    Console.WriteLine("Номер нечетного числа: " + indexNumber);
+                    Console.WriteLine(Number);                    
+                }
+                if (temp == Number)
+                {
+                    Number++;
+                }
+            }
+
+
+
+
+        }
+    }
+    #endregion
+
     public class MyClass
     {
         private static void Main()
         {
-            Class10 class10 = new Class10();
-            class10.NumberToString(-1);
+            Class11 class11 = new Class11();
+            class11.AddToNumber(20);
         }
 
     }
