@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 
 namespace StaticMetod
 {
@@ -252,10 +249,10 @@ namespace StaticMetod
 
     public class TaskClass5
     {
-        int a;
-        int b;
-        int c;
-        double cos;
+        private int a;
+        private int b;
+        private int c;
+        private double cos;
         public void ConsolWrite()
         {
             Console.WriteLine("Здравствуйте, для нахождения косисуна, пожалуйста, введите данные.");
@@ -353,17 +350,17 @@ namespace StaticMetod
     }
     #endregion
 
-    #region
+    #region Class8
 
     public class CLass8
     {
-        private int[] numbers = new int[5] { 0,1,2,3,4};
+        private int[] numbers = new int[5] { 0, 1, 2, 3, 4 };
         private int indx;
         private int _index;
 
         public void GetIndex()
         {
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 Console.WriteLine(numbers[i]);
             }
@@ -377,13 +374,13 @@ namespace StaticMetod
 
         private int Number
         {
-            get 
+            get
             {
-                return numbers[_index];                
+                return numbers[_index];
             }
-            set 
+            set
             {
-                numbers[indx] = value;  
+                numbers[indx] = value;
                 Console.WriteLine();
                 Console.WriteLine(numbers[_index]);
                 Console.WriteLine();
@@ -398,13 +395,63 @@ namespace StaticMetod
     }
     #endregion
 
+    #region Class9
+    public class Class9
+    {
+        private int[] numbers = new int[] { 0, 1, 4 };
+        private int _sum;
+
+        public void Show()
+        {
+            Console.WriteLine(Sum);
+        }
+        public int Sum
+        {
+            get
+            {
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    _sum += numbers[i];
+                }
+                return _sum;
+            }
+        }
+    }
+    #endregion
+
+    #region Class10
+    public class Class10
+    {
+        private int _number;
+        private char _char;
+
+        public int Number
+        {
+            set
+            {
+                _number = value;
+                _char = Convert.ToChar(_number);
+                Console.WriteLine(_char);
+            }
+        }
+        public void NumberToString(int value)
+        {
+            if (value < 0)
+            {
+                Console.WriteLine("Число не может быть меньше нуля.");
+            }
+            else
+                Number = value;
+        }
+    }
+    #endregion
+
     public class MyClass
     {
         private static void Main()
         {
-            CLass8 class8 = new CLass8();
-            class8.GetIndex();            
-            class8.SetIndex(99,2);
+            Class10 class10 = new Class10();
+            class10.NumberToString(-1);
         }
 
     }
