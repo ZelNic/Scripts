@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace StaticMetod
@@ -298,14 +300,14 @@ namespace StaticMetod
         public void ShowResult()
         {
 
-            double D = Math.Pow(b, 2) - 4 * a * c; 
-            if(D > 0)
+            double D = Math.Pow(b, 2) - 4 * a * c;
+            if (D > 0)
             {
-                double Res1 = (-b + Math.Sqrt(D)) / 2 * a; 
+                double Res1 = (-b + Math.Sqrt(D)) / 2 * a;
                 double Res2 = (-b - Math.Sqrt(D)) / 2 * a;
                 Console.WriteLine($"x_1 = {Res1}.");
-                Console.WriteLine($"x_2 = {Res2}.");                
-            }            
+                Console.WriteLine($"x_2 = {Res2}.");
+            }
             if (D == 0)
             {
                 double Res1 = -b / 2 * a;
@@ -318,13 +320,91 @@ namespace StaticMetod
     }
     #endregion
 
+    #region TaskClass7
+    public class TaskClass7
+    {
+        private char symbol;
 
+
+
+        public void GiveMeChar(char value)
+        {
+            Symbol = value;
+        }
+
+        private char Symbol
+        {
+            get { return symbol; }
+            set
+            {
+                if (value >= 'A' && value <= 'Z')
+                {
+                    symbol = value;
+                    Console.WriteLine("Данный символ входит в диапазон. Ваш символ:" + Symbol);
+                }
+                else
+                {
+                    Console.WriteLine("Данный символ выходит за границы диапазона.");
+                }
+
+            }
+        }
+
+    }
+    #endregion
+
+    #region
+
+    public class CLass8
+    {
+        private int[] numbers = new int[5] { 0,1,2,3,4};
+        private int indx;
+        private int _index;
+
+        public void GetIndex()
+        {
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+        }
+
+        public void SetIndex(int value, int ind)
+        {
+            indx = ind;
+            Number = value;
+        }
+
+        private int Number
+        {
+            get 
+            {
+                return numbers[_index];                
+            }
+            set 
+            {
+                numbers[indx] = value;  
+                Console.WriteLine();
+                Console.WriteLine(numbers[_index]);
+                Console.WriteLine();
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    Console.WriteLine(numbers[i]);
+                }
+            }
+        }
+
+
+    }
+    #endregion
 
     public class MyClass
     {
         private static void Main()
         {
-           
+            CLass8 class8 = new CLass8();
+            class8.GetIndex();            
+            class8.SetIndex(99,2);
         }
 
     }
