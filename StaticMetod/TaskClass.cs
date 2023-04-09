@@ -1,8 +1,59 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace StaticMetod
 {
+    public class Test
+    {
+        private static void Main()
+        {
+
+        }
+    }
+
+    #region Бинарное представление числа
+    public class Class13
+    {
+        private int num;
+        public string s;
+
+        public Class13(int num)
+        {
+            this.num = num;
+        }
+
+        public string this[int i]
+        {
+            get { return Convert.ToString(num, 2); }
+        }
+    }
+
+    #endregion
+
+    #region Индексация массива
+    public class Class12
+    {
+        /*
+          Class12 class12 = new Class12(5);
+          class12[3] = 1;
+          class12[1] = 2;
+          Console.WriteLine(class12[0]);*/
+
+
+        private int[] num;
+
+        public Class12(int rangeArray)
+        {
+            num = new int[rangeArray];
+        }
+
+        public int this[int i]
+        {
+            get { return num[i]; }
+            set { num[i] = value; }
+        }
+    }
+    #endregion
+
     #region SquaresSum
     public class SquaresSum
     {
@@ -118,7 +169,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region TaskClass
+    #region Конструктор
     public class TaskClass
     {
         private int a;
@@ -149,7 +200,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region TaskClass2
+    #region Получение символа из цифры 
     public class TaskClass2
     {
         public char A = 'A';
@@ -165,7 +216,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region TaskClass3 // преобразование вещ.числа в символ
+    #region Преобразование вещ.числа в символ
     public class TaskClass3
     {
         public int number;
@@ -447,7 +498,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region Class11
+    #region Работа с гет сет
     public class Class11
     {
         private int _number;
@@ -473,28 +524,16 @@ namespace StaticMetod
                     indexNumber++;
                     temp = Number;
                     Console.WriteLine("Номер нечетного числа: " + indexNumber);
-                    Console.WriteLine(Number);                    
+                    Console.WriteLine(Number);
                 }
                 if (temp == Number)
                 {
                     Number++;
                 }
             }
-
-
-
-
         }
     }
     #endregion
 
-    public class MyClass
-    {
-        private static void Main()
-        {
-            Class11 class11 = new Class11();
-            class11.AddToNumber(20);
-        }
 
-    }
 }
