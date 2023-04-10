@@ -6,9 +6,57 @@ namespace StaticMetod
     {
         private static void Main()
         {
-
+            
         }
     }
+    #region Задания с наследованиеями 
+    #region Наследование с использованием ToString();
+    public class Alpha
+    {
+        private string text;
+
+        public Alpha(string text)
+        {
+            this.text = text;
+        }
+
+        public virtual void ToString()
+        {
+            Console.WriteLine("Alpha -  " + text);
+        }
+    }
+
+    public class Bravo : Alpha
+    {
+        private string text2;
+        private string text3;
+        public Bravo(string text2) : base(text2)
+        {
+            this.text2 = text2;
+        }
+
+
+        public Bravo(string text2, string text3) : base(text2)
+        {
+            this.text2 = text2;
+            this.text3 = text3;
+        }
+
+        public override void ToString()
+        {
+            Console.WriteLine("Bravo_1 - " + text2);
+            Console.WriteLine("Bravo_2 - " + text3);
+        }
+
+    }
+
+
+
+
+
+
+    #endregion
+    #endregion
 
     #region Бинарное представление числа
     public class Class13
@@ -54,7 +102,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region SquaresSum
+    #region Сумма квадратов 
     public class SquaresSum
     {
         public static int sum = 0;
@@ -82,7 +130,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region DoubleFactorial
+    #region Двойной факториал
     public class DoubleFactorial
     {
         public static int sum = 1;
@@ -139,7 +187,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region Factorial
+    #region Факториал
     public class Factorial
     {
         public static int sum = 1;
@@ -252,7 +300,7 @@ namespace StaticMetod
     }
     #endregion // п
 
-    #region MinMaxAverageParams
+    #region Нахождение мин и макс с использованием params
     public class MinMaxAverageParams
     {
         private int maxNumber;
@@ -297,7 +345,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region нахождение косинуса
+    #region Нахождение косинуса
 
     public class TaskClass5
     {
@@ -369,7 +417,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region TaskClass7
+    #region Определение вхождения символа в заданный диапазон
     public class TaskClass7
     {
         private char symbol;
@@ -402,7 +450,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region Class8
+    #region Получение элемента из массива и использование инициализотора
 
     public class CLass8
     {
@@ -447,7 +495,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region Class9
+    #region Задача с get 
     public class Class9
     {
         private int[] numbers = new int[] { 0, 1, 4 };
@@ -471,7 +519,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region Class10
+    #region Задача с set, преобразрование числа в символ
     public class Class10
     {
         private int _number;
@@ -498,7 +546,7 @@ namespace StaticMetod
     }
     #endregion
 
-    #region Работа с гет сет
+    #region Задача с get и set, вывод нечетный чисел и присвоение им индекса
     public class Class11
     {
         private int _number;
