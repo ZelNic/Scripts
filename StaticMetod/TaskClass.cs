@@ -311,6 +311,7 @@ namespace StaticMetod
 
 
 
+
     #endregion
 
     #region Бинарное представление числа
