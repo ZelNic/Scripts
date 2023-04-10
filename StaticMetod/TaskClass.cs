@@ -56,6 +56,261 @@ namespace StaticMetod
 
 
     #endregion
+
+    #region Задача с наследованием, с использованием индексатора, с get, который возвращает длину строки.
+    public class TextBase
+    {
+        private string _text;
+
+        public TextBase(string text)
+        {
+            this._text = text;
+        }
+
+        public void ShowCon()
+        {
+            Console.WriteLine(_text);
+        }
+
+        public void SetText()
+        {
+            _text = "Захотел и присвоил";
+        }
+
+        public new void SetText(string text)
+        {
+            _text = text;
+        }
+
+        public int Length
+        {
+            get { return _text.Length; }
+        }
+
+        public int this[int indexChar]
+        {
+            get
+            {
+                return this[indexChar];
+            }
+        }
+    }
+
+    public class Text : TextBase
+    {
+        public int number;
+        public Text(string text, int number) : base(text)
+        {
+            this.number = number;
+        }
+
+        public new void SetText()
+        {
+            base.SetText();
+            number = 0;
+        }
+
+        public new void SetText(string text)
+        {
+            base.SetText(text);
+            number = text.Length;
+            Console.WriteLine("Длина текста = " + number);
+        }
+
+        public void SetText(int number)
+        {
+            this.number = number;
+        }
+
+        public void SetText(string text, int number)
+        {
+            base.SetText(text);
+            this.number = number;
+
+        }
+    }
+
+    #endregion
+
+    #region Задача с массивом
+    public class BaseArray
+    {
+        public int[] array;
+
+        public BaseArray(int[] array)
+        {
+            this.array = array;
+        }
+
+        public void ToString()
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(" " + array[i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    public class SonOfBaseArray : BaseArray
+    {
+        public char[] charArray;
+        public SonOfBaseArray(int[] array, char[] charArray) : base(array)
+        {
+            this.charArray = charArray;
+        }
+
+        public new void ToString()
+        {
+            Console.WriteLine();
+            base.ToString();
+            Console.WriteLine();
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(" " + charArray[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+
+    }
+
+
+
+    #endregion
+
+    #region Цепочка наследования
+    public class LinkBase
+    {
+        public int number;
+
+        public LinkBase(int number)
+        {
+            this.number = number;
+        }
+
+        public void SetNumber(int number)
+        {
+            this.number = number;
+        }
+
+        public void Write()
+        {
+            Console.WriteLine("LinkBase: число " + number + ".");
+        }
+    }
+
+    public class FirstLink : LinkBase
+    {
+        public char symbol;
+        public FirstLink(int number, char symbol) : base(number)
+        {
+            this.symbol = symbol;
+        }
+
+        public void SetNumber(int number, char symbol)
+        {
+            this.symbol = symbol;
+        }
+
+        public new void Write()
+        {
+            Console.WriteLine("FirstLink: число " + number + "," + symbol + ".");
+        }
+    }
+
+    public class SecondLink : FirstLink
+    {
+        public string text;
+        public SecondLink(int number, char symbol, string text) : base(number, symbol)
+        {
+            base.number = number;
+            this.text = text;
+        }
+
+        public void SetNumber(int number, char symbol, string text)
+        {
+            base.number = number;
+            base.symbol = symbol;
+            this.text = text;
+        }
+
+        public new void Write()
+        {
+            Console.WriteLine("FirstLink: число " + number + "," + symbol + "," + text + ".");
+        }
+    }
+
+    #endregion
+
+    #region Цепочка с object
+
+    public class ObjectBase
+    {
+        public char symbol;
+
+        public ObjectBase(char symbol)
+        {
+            this.symbol = symbol;
+        }
+
+        public ObjectBase(ObjectBase objectBase)
+        {
+            symbol = objectBase.symbol;
+        }
+
+
+        public void Show()
+        {
+            Console.Write(symbol);
+        }
+    }
+
+    public class FirstObject : ObjectBase
+    {
+        public string text;
+        public FirstObject(char symbol, string text) : base(symbol)
+        {
+            this.text = text;
+        }
+
+        public FirstObject(FirstObject firstObject) : base(firstObject)
+        {
+            text = firstObject.text;
+        }
+
+        public new void Show()
+        {
+            base.Show();
+            Console.Write(text);
+        }
+
+    }
+
+    public class SecondObject : FirstObject
+    {
+        public int number;
+        public SecondObject(char symbol, string text, int number) : base(symbol, text)
+        {
+            this.number = number;
+        }
+
+        public SecondObject(SecondObject secondObject) : base(secondObject)
+        {
+            number = secondObject.number;
+        }
+
+        public new void Show()
+        {            
+            base.Show();            
+            Console.Write(number);          
+        }
+
+    }
+    #endregion
+
+
+
     #endregion
 
     #region Бинарное представление числа
