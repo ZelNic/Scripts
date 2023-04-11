@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 
 namespace StaticMetod
 {
@@ -23,41 +20,30 @@ namespace StaticMetod
         public int[] TwoSum(int[] nums, int target)
         {
             Dictionary<int, int> dict = new Dictionary<int, int>();
+            Dictionary<int, int> dict2 = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
                 dict.Add(i, nums[i]);
+                dict2.Add(nums[i], i);
+                Console.WriteLine(dict[i]);
+                Console.WriteLine(dict2.nums[i]);
+
             }
 
-            for (int key_1 = 0; key_1 < dict.Count; key_1++)
+            for (int i = 0; i < dict.Count; i++)
             {
-                int complement = target - nums[key_1];
-                int key_2 = dict.FirstOrDefault(x => x.Value == complement).Key;
-                var keys = dict.Where(x => x.Value == complement).Select(x => x.Key);
-                foreach (int key in keys)
+                int y = target - dict[i];
+                if (dict2.ContainsKey(y))
                 {
-                    if(key > 1)
-                    {
-                        foreach (int k in keys)
-                        {
-                            if (k == key_1)
-                            {
-                                continue;
-                            }
-                            if (k != key_1)
-                            {
-                                key_2 = k;
-                            }
-                        }
-                    }
+                    Console.WriteLine(y);
                 }
-                
-                Console.WriteLine($"{key_1}," , "{key_2}.");
-                int[] array = { key_1, key_2 };
-                return array;
             }
             return null;
         }
+
     }
+
+
     /*public int[] TwoSum(int[] nums, int target)
         {
             while (search)
@@ -923,6 +909,4 @@ namespace StaticMetod
         }
     }
     #endregion
-
-
 }
