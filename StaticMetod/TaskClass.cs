@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace StaticMetod
 {
@@ -6,9 +10,90 @@ namespace StaticMetod
     {
         private static void Main()
         {
-            
+            int[] nums = { 3, 2, 3 };
+            Solution solution = new Solution();
+            solution.TwoSum(nums, 6);
+
         }
     }
+
+    #region Задача с LeetCode. Two Sum.
+    public class Solution
+    {
+        public int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                dict.Add(i, nums[i]);
+            }
+
+            for (int key_1 = 0; key_1 < dict.Count; key_1++)
+            {
+                int complement = target - nums[key_1];
+                int key_2 = dict.FirstOrDefault(x => x.Value == complement).Key;
+                var keys = dict.Where(x => x.Value == complement).Select(x => x.Key);
+                foreach (int key in keys)
+                {
+                    if(key > 1)
+                    {
+                        foreach (int k in keys)
+                        {
+                            if (k == key_1)
+                            {
+                                continue;
+                            }
+                            if (k != key_1)
+                            {
+                                key_2 = k;
+                            }
+                        }
+                    }
+                }
+                
+                Console.WriteLine($"{key_1}," , "{key_2}.");
+                int[] array = { key_1, key_2 };
+                return array;
+            }
+            return null;
+        }
+    }
+    /*public int[] TwoSum(int[] nums, int target)
+        {
+            while (search)
+            {
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    sum = 0;
+                    sum += nums[i];                    
+                    xI = Array.IndexOf(nums, nums[i]);
+                    int startIndex = xI;
+                    for (int j = 0; j < nums.Length; j++)
+                    {
+                        yI = Array.IndexOf(nums, nums[j]);
+                        if (yI == xI)
+                        {
+                            yI = Array.IndexOf(nums, nums[j], startIndex++);
+                        }
+                        if (yI != xI)
+                        {
+                            if (sum + nums[j] == target)
+                            {       
+                                int[] array = new int[] { xI, yI };
+                                Console.WriteLine($"{xI},{yI}");
+                                search = false;
+                                return array;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }*/
+
+
+    #endregion
+
     #region Задания с наследованиеями 
     #region Наследование с использованием ToString();
     public class Alpha
@@ -301,9 +386,9 @@ namespace StaticMetod
         }
 
         public new void Show()
-        {            
-            base.Show();            
-            Console.Write(number);          
+        {
+            base.Show();
+            Console.Write(number);
         }
 
     }
