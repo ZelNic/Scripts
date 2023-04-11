@@ -19,28 +19,22 @@ namespace StaticMetod
     {
         public int[] TwoSum(int[] nums, int target)
         {
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-            Dictionary<int, int> dict2 = new Dictionary<int, int>();
+            Dictionary<int, int> dict = new Dictionary<int, int>();      
+
             for (int i = 0; i < nums.Length; i++)
             {
-                dict.Add(i, nums[i]);
-                dict2.Add(nums[i], i);
-                Console.WriteLine(dict[i]);
-                Console.WriteLine(dict2.nums[i]);
-
-            }
-
-            for (int i = 0; i < dict.Count; i++)
-            {
-                int y = target - dict[i];
-                if (dict2.ContainsKey(y))
+                int y = target - nums[i];
+                if (dict.ContainsKey(y))
                 {
-                    Console.WriteLine(y);
+                    return new int[] { dict[y], i };
+                }
+                else
+                {
+                    dict[nums[i]] = i;
                 }
             }
-            return null;
-        }
-
+            throw new Exception("Not found.");
+        }  
     }
 
 
