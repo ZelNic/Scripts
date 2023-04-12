@@ -1,7 +1,5 @@
 ﻿
 using System;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Tasks_of_the_Second_Book
 {
@@ -9,10 +7,9 @@ namespace Tasks_of_the_Second_Book
     {
         public static void Main()
         {
+            
         }
     }
-
-
 
     #region Chapter_1
 
@@ -107,7 +104,7 @@ namespace Tasks_of_the_Second_Book
     #endregion
 
     #region Task_3
-    interface IInterface
+    internal interface IInterface
     {
         int Method();
     }
@@ -119,7 +116,7 @@ namespace Tasks_of_the_Second_Book
 
         public Task_3(int countNumber)
         {
-            this.countNumber = countNumber;           
+            this.countNumber = countNumber;
         }
 
         public int Method()
@@ -129,7 +126,7 @@ namespace Tasks_of_the_Second_Book
                 if (i % 2 == 0)
                 {
                     sum += i;
-                }     
+                }
             }
             Console.WriteLine("Сумма четных чисел: " + sum);
             return sum;
@@ -154,7 +151,7 @@ namespace Tasks_of_the_Second_Book
                 if (i % 2 == 1)
                 {
                     sum += i;
-                }               
+                }
             }
             Console.WriteLine("Сумма нечетных чисел: " + sum);
             return sum;
@@ -163,9 +160,88 @@ namespace Tasks_of_the_Second_Book
     #endregion
 
     #region Task_4
+    public abstract class Task_4
+    {
+        protected int num_1;
+        protected int num_2;
 
+        public Task_4(int num_1, int num_2)
+        {
+            this.num_1 = num_1;
+            this.num_2 = num_2;
+        }
+        public abstract int this[int i]
+        {
+            get;
+        }
+    }
+
+    interface IInterfaceTask_4
+    {
+        int Metod(int value);
+    }
+
+    public class Task_4_1 : Task_4, IInterfaceTask_4
+    {
+        public Task_4_1(int num_1, int num_2) : base(num_1, num_2)
+        {
+            this.num_1 = num_1;
+            this.num_2 = num_2;
+        }
+
+        public override int this[int i]
+        {
+            get
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine("Первое число: " + num_1);
+                    return num_1;
+                }
+                else Console.WriteLine("Второе число: " + num_2);
+                return num_2;
+            }
+        }
+
+        public int Metod(int value)
+        {
+            Console.WriteLine("Ответ: " + num_1 + num_2 * value);
+            int sum = num_1 + num_2 * value;
+            return sum;
+        }
+    }
 
     #endregion
+
+    #region Task_5
+    interface ITask5
+    {
+        int Metod(char symbol);
+    }
+
+    interface ITask5_1
+    {
+        char Metod(int value);
+    }
+
+    public class Task5_1 : ITask5, ITask5_1
+    {
+        public int Metod(char symbol)
+        {
+            int i = Convert.ToInt32(symbol);
+            Console.WriteLine(i);
+            return i;
+        }
+
+        public char Metod(int value)
+        {
+            char s = Convert.ToChar(value);
+            Console.WriteLine(s);
+            return s;
+        }
+    }
+
+    #endregion    
 
     #endregion
 }
