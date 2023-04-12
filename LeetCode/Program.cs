@@ -7,15 +7,31 @@ namespace LeetCode
     {
         private static void Main(string[] args)
         {
-           
+            int[] nums = { 1, 2, 3, 4 };
+            Solution_1480 solution_1480 = new Solution_1480();
+            solution_1480.RunningSum(nums);
+
         }
     }
 
-    public class Solution_2
+    public class Solution_1480
     {
-        public int LengthOfLongestSubstring(string s)
+        public int[] RunningSum(int[] nums)
         {
-
+            int[] temp = new int[nums.Length];
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (i == 0)
+                {
+                    temp[i] += nums[i];
+                }
+                if (i > 0)
+                {
+                    temp[i] += nums[i] + temp[i - 1];
+                }  
+            }
+            nums = temp;            
+            return nums;
         }
     }
 
@@ -39,7 +55,7 @@ namespace LeetCode
                 return false;
         }
     }
-#endregion
+    #endregion
 
     #region  1. Two Sum
     public class Solution_1
