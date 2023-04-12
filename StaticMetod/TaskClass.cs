@@ -6,36 +6,13 @@ namespace StaticMetod
     public class Test
     {
         private static void Main()
-        {
-            int[] nums = { 3, 2, 3 };
-            Solution solution = new Solution();
-            solution.TwoSum(nums, 6);
+        {            
 
         }
     }
+    
 
-    #region Задача с LeetCode. Two Sum.
-    public class Solution
-    {
-        public int[] TwoSum(int[] nums, int target)
-        {
-            Dictionary<int, int> dict = new Dictionary<int, int>();      
-
-            for (int i = 0; i < nums.Length; i++)
-            {
-                int y = target - nums[i];
-                if (dict.ContainsKey(y))
-                {
-                    return new int[] { dict[y], i };
-                }
-                else
-                {
-                    dict[nums[i]] = i;
-                }
-            }
-            throw new Exception("Not found.");
-        }  
-    }
+    
 
 
     /*public int[] TwoSum(int[] nums, int target)
