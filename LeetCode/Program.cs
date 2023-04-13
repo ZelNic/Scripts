@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Linq;
+using System.Runtime.ExceptionServices;
 
 namespace LeetCode
 {
@@ -7,13 +9,35 @@ namespace LeetCode
     {
         private static void Main(string[] args)
         {
-            int[] nums = { 1, 2, 3, 4 };
-            Solution_1480 solution_1480 = new Solution_1480();
-            solution_1480.RunningSum(nums);
+            int[] nums = { 1, 7, 3, 6, 5, 6 };
+            Solution_724 solution_724 = new Solution_724();
+            solution_724.PivotIndex(nums);
 
         }
     }
+    #region 724. Find Pivot Index
+    public class Solution_724
+    {
+        public int PivotIndex(int[] nums)
+        {
+            int leftSum = 0;
+            int rightSum = nums.Skip(1).Sum();
+            if (leftSum == rightSum) return 0;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                leftSum += nums[i - 1];
+                rightSum -= nums[i];
+                if (leftSum == rightSum) return i;
+            }
+            return -1;
+        }
+    }
 
+
+    #endregion
+
+
+    #region 1480. Running Sum of 1d Array
     public class Solution_1480
     {
         public int[] RunningSum(int[] nums)
@@ -34,6 +58,7 @@ namespace LeetCode
             return nums;
         }
     }
+    #endregion
 
     #region 9. Palindrome
     public class Solution_9
