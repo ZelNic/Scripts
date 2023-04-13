@@ -9,12 +9,48 @@ namespace LeetCode
     {
         private static void Main(string[] args)
         {
-            int[] nums = { 1, 7, 3, 6, 5, 6 };
-            Solution_724 solution_724 = new Solution_724();
-            solution_724.PivotIndex(nums);
-
+            Solution_205 solution_205 = new Solution_205();
+            solution_205.IsIsomorphic("badc", "baba");
         }
     }
+    #region 205. Isomorphic Strings
+    public class Solution
+    {
+        public bool IsIsomorphic(string s, string t)
+        {
+            Dictionary<char, char> dict = new Dictionary<char, char>();
+            if (s.Length != t.Length) return false;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (!dict.ContainsKey(s[i]) && !dict.ContainsValue(s[i]))
+                {
+                    if (!dict.TryGetValue(s[i], out char value))
+                    {
+                        if (value != t[i])
+                        {
+                            dict.Add(s[i], t[i]);
+                        }
+                        else
+                            return false;
+
+                        continue;
+                    }
+                }
+                else if (dict.TryGetValue(s[i], out char val))
+                {
+                    if (val != t[i])
+                    {
+                        return false;
+                    }
+                    else continue;
+                }
+
+            }
+            return true;
+        }
+    }
+    #endregion
+
     #region 724. Find Pivot Index
     public class Solution_724
     {
@@ -36,7 +72,6 @@ namespace LeetCode
 
     #endregion
 
-
     #region 1480. Running Sum of 1d Array
     public class Solution_1480
     {
@@ -52,9 +87,9 @@ namespace LeetCode
                 if (i > 0)
                 {
                     temp[i] += nums[i] + temp[i - 1];
-                }  
+                }
             }
-            nums = temp;            
+            nums = temp;
             return nums;
         }
     }
