@@ -47,6 +47,7 @@
     <Compile Include="Chapter_2\Task2.cs" />
     <Compile Include="Chapter_2\Task3.cs" />
     <Compile Include="Chapter_2\Task4.cs" />
+    <Compile Include="Chapter_2\Task5.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Chapter_1\Chapter_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
