@@ -6,7 +6,7 @@ namespace Tasks_of_the_Second_Book
     {
         public static void Main()
         {
-                       
+            
         }
 
     }
