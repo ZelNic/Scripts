@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.ExceptionServices;
 
 namespace LeetCode
 {
@@ -10,11 +9,11 @@ namespace LeetCode
         private static void Main(string[] args)
         {
             Solution_205 solution_205 = new Solution_205();
-            solution_205.IsIsomorphic("badc", "baba");
+            solution_205.IsIsomorphic("bbbaaaba", "aaabbbba");
         }
     }
     #region 205. Isomorphic Strings
-    public class Solution
+    public class Solution_205
     {
         public bool IsIsomorphic(string s, string t)
         {
@@ -22,29 +21,14 @@ namespace LeetCode
             if (s.Length != t.Length) return false;
             for (int i = 0; i < s.Length; i++)
             {
-                if (!dict.ContainsKey(s[i]) && !dict.ContainsValue(s[i]))
-                {
-                    if (!dict.TryGetValue(s[i], out char value))
-                    {
-                        if (value != t[i])
-                        {
-                            dict.Add(s[i], t[i]);
-                        }
-                        else
-                            return false;
-
-                        continue;
-                    }
-                }
-                else if (dict.TryGetValue(s[i], out char val))
-                {
-                    if (val != t[i])
-                    {
-                        return false;
-                    }
-                    else continue;
-                }
-
+                if (dict.ContainsKey(s[i]) && dict.TryGetValue(s[i], out char value) && value == t[i])
+                    continue;
+                if (!dict.ContainsKey(s[i]) && !dict.ContainsValue(t[i]))
+                    dict.Add(s[i], t[i]);
+                if (dict.ContainsKey(s[i]) && dict.TryGetValue(s[i], out char val) && val != t[i])                
+                    return false;                
+                if (dict.ContainsKey(s[i]) && !dict.ContainsValue(t[i]) || !dict.ContainsKey(s[i]) && dict.ContainsValue(t[i]))
+                    return false;
             }
             return true;
         }
