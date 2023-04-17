@@ -1,10 +1,13 @@
-﻿namespace Tasks_of_the_Second_Book
+﻿using System;
+
+namespace Tasks_of_the_Second_Book
 {
     public class MainClass
-    {        
-        public static void Main()
+    {
+        static void Main(string[] args)
         {
-            
+           
+
         }
 
     }

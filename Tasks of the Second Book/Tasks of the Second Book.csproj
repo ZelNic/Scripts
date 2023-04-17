@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,7 +56,10 @@
     <Compile Include="Chapter_2\Task9.cs" />
     <Compile Include="Chapter_3\3Task1.cs" />
     <Compile Include="Chapter_3\3Task2.cs" />
-    <Compile Include="Chapter_3\3Task3.cs" />
+    <Compile Include="Chaptet_4\T4_1.cs" />
+    <Compile Include="Chaptet_4\T4_2.cs" />
+    <Compile Include="Chaptet_4\T4_3.cs" />
+    <Compile Include="Chaptet_4\T4_4.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Chapter_1\Chapter_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
