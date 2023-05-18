@@ -8,8 +8,7 @@ namespace LeetCode
     {
         private static void Main(string[] args)
         {
-            Solution_205 solution_205 = new Solution_205();
-            solution_205.IsIsomorphic("bbbaaaba", "aaabbbba");
+
         }
     }
     #region 205. Isomorphic Strings
