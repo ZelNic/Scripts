@@ -6,36 +6,45 @@ namespace _1071.Greatest_Common_Divisor_of_Strings
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine(GcdOfStrings("ABCA", "ABCABAC"));
+            Console.WriteLine(GcdOfStrings("ABCA", "ABCA"));
         }
         public static string GcdOfStrings(string str1, string str2)
         {
             string result = "";
-            for (int i = 0; i < str1.Length; i++)
+            int B = 0;
+
+            if (str1.Length > str2.Length) B = str1.Length;
+            else if (str1.Length == str2.Length) B = str1.Length;
+            else B = str2.Length;
+
+            for (int i = 0; i < B; i++)
             {
                 if ((str1.Length > i) && (str2.Length > i))
                     if (str1[i] == str2[i])
-                        if (result.IndexOf(str1[i]) == -1)
-                            result += str1[i];
+                        result += str1[i];
 
 
                 if ((str1.Length > i) && (str2.Length <= i))
                     for (int j = i; j < str1.Length; j += str2.Length)
                     {
                         for (int k = 0; k < str2.Length; k++)
+                        {
                             if (str1[j + k] == str2[k]) continue;
                             else return result = "";
+                        }                            
 
                         return result;
                     }
 
 
                 if ((str1.Length <= i) && (str2.Length > i))
-                    for (int j = i; j < str2.Length; j+= str1.Length)
+                    for (int j = i; j < str2.Length; j += str1.Length)
                     {
                         for (int k = 0; k < str1.Length; k++)
+                        {
                             if (str2[j + k] == str1[k]) continue;
                             else return result = "";
+                        }
 
                         return result;
                     }
