@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Codeabbey\S5.cs" />
+    <Compile Include="Codeabbey\S4.cs" />
     <Compile Include="Codeabbey\S3.cs" />
     <Compile Include="Codeabbey\S2.cs" />
     <Compile Include="Codeabbey\_0.StartProgramm - Copy.cs" />
