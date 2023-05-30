@@ -12,8 +12,7 @@ namespace Codeabbey
             string s = "";
 
             string[] input = s.Split(' ');
-            int[] numbers = new int[input.Length];
-           
+            int[] numbers = new int[input.Length];           
 
             Console.WriteLine();
 

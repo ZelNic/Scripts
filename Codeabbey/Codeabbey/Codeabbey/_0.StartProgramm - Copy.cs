@@ -10,7 +10,8 @@ namespace Codeabbey
             Console.WriteLine("Enter the number of pairs to count");            
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Beep();
-            S5.MinimumofThree(n);
+            
+            S6.Rounding(n);
         }
     }
 }
