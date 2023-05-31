@@ -48,6 +48,7 @@
     <Compile Include="Codeabbey\S4.cs" />
     <Compile Include="Codeabbey\S3.cs" />
     <Compile Include="Codeabbey\S2.cs" />
+    <Compile Include="Codeabbey\S7.cs" />
     <Compile Include="Codeabbey\_0.StartProgramm - Copy.cs" />
     <Compile Include="Codeabbey\S1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

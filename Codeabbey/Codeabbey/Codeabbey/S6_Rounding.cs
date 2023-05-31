@@ -2,7 +2,7 @@
 
 namespace Codeabbey
 {
-    public static class S6
+    public static class S6_Rounding
     {
         public static void Rounding(int n)
         {

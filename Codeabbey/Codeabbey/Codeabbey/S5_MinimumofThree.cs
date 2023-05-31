@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Codeabbey
 {
-    public static class S5
+    public static class S5_MinimumofThree
     {
         public static void MinimumofThree(int n)
         {

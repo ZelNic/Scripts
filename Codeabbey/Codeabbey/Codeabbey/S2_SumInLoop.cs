@@ -2,7 +2,7 @@
 
 namespace Codeabbey
 {
-    public static class S2
+    public static class S2_SumInLoop
     {
         public static int SumInLoop(string s)
         {
