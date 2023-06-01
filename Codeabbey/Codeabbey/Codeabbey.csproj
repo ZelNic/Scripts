@@ -43,14 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Codeabbey\S6.cs" />
-    <Compile Include="Codeabbey\S5.cs" />
-    <Compile Include="Codeabbey\S4.cs" />
-    <Compile Include="Codeabbey\S3.cs" />
-    <Compile Include="Codeabbey\S2.cs" />
-    <Compile Include="Codeabbey\S7.cs" />
+    <Compile Include="Codeabbey\S_18\S10_LinearFunction.cs" />
+    <Compile Include="Codeabbey\S_9\S6_Rounding.cs" />
+    <Compile Include="Codeabbey\S_9\S5_MinimumofThree.cs" />
+    <Compile Include="Codeabbey\S_9\S4_MinimumOfTwo.cs" />
+    <Compile Include="Codeabbey\S_9\S3_SumsInLoop.cs" />
+    <Compile Include="Codeabbey\S_9\S2_SumInLoop.cs" />
+    <Compile Include="Codeabbey\S_9\S7_FahrenheitToCelsius.cs" />
+    <Compile Include="Codeabbey\S_9\S8_ArithmeticProgression.cs" />
+    <Compile Include="Codeabbey\S_9\S9_Triangles.cs" />
     <Compile Include="Codeabbey\_0.StartProgramm - Copy.cs" />
-    <Compile Include="Codeabbey\S1.cs" />
+    <Compile Include="Codeabbey\S_9\S1_Sum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

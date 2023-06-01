@@ -9,7 +9,7 @@ namespace Codeabbey
         {
             Console.WriteLine("Enter Count");
 
-            S8_ArithmeticProgression.Make(Convert.ToInt32(Console.ReadLine()));
+            S9.Make(Convert.ToInt32(Console.ReadLine()));
         }
     }
 }

@@ -8,7 +8,8 @@ namespace Codeabbey.Codeabbey
         {
             if (A == 0) return;
 
-            string s = "";
+            Console.WriteLine("Enter nubmers.");
+            string s = Console.ReadLine();
 
             string[] input = s.Split(' ');
             int[] numbers = new int[input.Length];
@@ -25,6 +26,7 @@ namespace Codeabbey.Codeabbey
                 int a = 0;
                 int b = 0;
                 int c = 0;
+                int result = 0;
 
                 for (int j = 0; j < 3; j++)
                 {
@@ -33,11 +35,13 @@ namespace Codeabbey.Codeabbey
                     else if (j == 2) { c = numbers[i + j]; }
                 }
 
-                if ((a < b) && (a < c)) { Console.WriteLine(a); }
-                if ((b < c) && (b < a)) { Console.WriteLine(b); }
-                if ((c < a) && (c < b)) { Console.WriteLine(c); }
+                for (int n = 0; n < c; n++)
+                {
+                    result += a + (b * n);
+                }
+                Console.WriteLine(result);
             }
         }
     }
-    }
 }
+
