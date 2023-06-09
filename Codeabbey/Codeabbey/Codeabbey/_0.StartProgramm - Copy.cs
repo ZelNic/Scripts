@@ -1,4 +1,4 @@
-﻿using Codeabbey.Codeabbey;
+﻿using Codeabbey.Codeabbey.S_18;
 using System;
 
 namespace Codeabbey
@@ -9,7 +9,7 @@ namespace Codeabbey
         {
             Console.WriteLine("Enter Count");
 
-            S9.Make(Convert.ToInt32(Console.ReadLine()));
+            S10_LinearFunction.Make(Convert.ToInt32(Console.ReadLine()));
         }
     }
 }
