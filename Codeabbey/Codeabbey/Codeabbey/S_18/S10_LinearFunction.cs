@@ -59,6 +59,7 @@ namespace Codeabbey.Codeabbey.S_18
                     else if (j == 3) { y2 = numbers[i + j]; }
                 }
                 int a = 0;
+                
                 try
                 {
                     a = (y2 - y1) / (x2 - x1);
