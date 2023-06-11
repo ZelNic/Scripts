@@ -8,7 +8,11 @@ namespace Codeabbey.Codeabbey.S_18
     //0 0 1 1
     //1 0 0 1
 
+    //651 14007 763 16583 -52 1328 -931 25940
     
+    //(23 -966) (-28 -128)
+
+  
 
     public static class S10_LinearFunction
     {
@@ -32,19 +36,20 @@ namespace Codeabbey.Codeabbey.S_18
             for (int i = 0; i < numbers.Length; i += 4)
             {
                 int x1 = 0;
-                int x2 = 0;
                 int y1 = 0;
+                int x2 = 0;
                 int y2 = 0;
 
                 for (int j = 0; j < 4; j++)
                 {
                     if (j == 0) { x1 = numbers[i + j]; }
-                    else if (j == 1) { x2 = numbers[i + j]; }
-                    else if (j == 2) { y1 = numbers[i + j]; }
+                    else if (j == 1) { y1 = numbers[i + j]; }
+                    else if (j == 2) { x2 = numbers[i + j]; }
                     else if (j == 3) { y2 = numbers[i + j]; }
                 }
+
                 int a = 0;
-                
+
                 try
                 {
                     a = (y2 - y1) / (x2 - x1);

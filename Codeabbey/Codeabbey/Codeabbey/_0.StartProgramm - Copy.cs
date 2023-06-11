@@ -5,10 +5,9 @@ namespace Codeabbey
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            Console.WriteLine("Enter Count");
-
+            Console.WriteLine("Enter Count");            
             S10_LinearFunction.Make(Convert.ToInt32(Console.ReadLine()));
         }
     }
