@@ -4,13 +4,7 @@ using System.Linq;
 
 namespace LeetCode
 {
-    public class Program
-    {
-        private static void Main(string[] args)
-        {
-
-        }
-    }
+   
     #region 205. Isomorphic Strings
     public class Solution_205
     {
