@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1431. Kids With the Greatest Number of Candies.cs" />
+    <Compile Include="344. Reverse String.cs" />
     <Compile Include="605. Can Place Flowers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
