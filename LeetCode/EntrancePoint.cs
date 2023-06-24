@@ -3,11 +3,13 @@
 
 namespace LeetCode
 {
+
     public class EntrancePoint
     {
         public static void Main()
         {
-            _345.ReverseVowels("A man, a plan, a canal: Panama");
+            int[] a = { 0, 1, 0, 3, 12 };
+            _283.MoveZeroes(a);
         }
     }
 }
