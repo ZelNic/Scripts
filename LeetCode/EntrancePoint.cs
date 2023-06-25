@@ -8,7 +8,7 @@ namespace LeetCode
     {
         public static void Main()
         {
-            
+            Console.WriteLine(_392.IsSubsequence("acb", "ahbgdc"));
         }
     }
 }

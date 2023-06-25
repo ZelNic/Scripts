@@ -6,18 +6,18 @@ namespace LeetCode
     {
         public static bool IsSubsequence(string s, string t)
         {
-            int numCoincidence = 0;
-            for(int i  = 0; i < s.Length; i++)
+            string tmp = "";
+            for (int i = 0; i < s.Length; i++)
             {
-                for (int j = 0; j < t.Length; j++)
+                for (int j = i; j < t.Length; j++)
                 {
                     if (s[i] == t[j])
                     {
-                        numCoincidence++;
+                        tmp += t[j];
                     }
                 }
             }
-            if (numCoincidence == s.Length)
+            if (tmp == s)
             {
                 return true;
             }
