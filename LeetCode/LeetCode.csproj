@@ -46,6 +46,7 @@
     <Compile Include="283. Move Zeroes.cs" />
     <Compile Include="345. Reverse Vowels of a String.cs" />
     <Compile Include="392. Is Subsequence.cs" />
+    <Compile Include="643. Maximum Average Subarray I.cs" />
     <Compile Include="EntrancePoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
