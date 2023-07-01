@@ -7,8 +7,8 @@ namespace LeetCode
     {
         public static void Main()
         {
-            int[] a = { 7, 4, 5, 8, 8, 3, 9, 8, 7, 6 };
-            Console.WriteLine(_643.FindMaxAverage(a, 7));
+            int[] a = { -5, 1, 5, 0, -7 };
+            Console.WriteLine(_1732.LargestAltitude(a));
         }
     }
 }
