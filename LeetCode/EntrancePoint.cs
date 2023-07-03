@@ -7,8 +7,8 @@ namespace LeetCode
     {
         public static void Main()
         {
-            int[] a = { 1, 2, 3, 3 };
-            int[] b = { 1, 1, 2, 2 };
+            int[] a = { 80, 5, -20, 33, 26, 29 };
+            int[] b = { -69, 0, -36, 52, -84, -34, -67, -100, 80 };
             _2215.FindDifference(a,b);
         }
     }
