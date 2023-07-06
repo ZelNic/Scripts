@@ -7,9 +7,8 @@ namespace LeetCode
     {
         public static void Main()
         {
-            int[] a = { 80, 5, -20, 33, 26, 29 };
-            int[] b = { -69, 0, -36, 52, -84, -34, -67, -100, 80 };
-            _2215.FindDifference(a,b);
+            int[] a = { -3, 0, 1, -3, 1, 1, 1, -3, 10, 0 };
+            _1207.UniqueOccurrences(a);
         }
     }
 }

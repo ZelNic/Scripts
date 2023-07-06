@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1207. Unique Number of Occurrences.cs" />
     <Compile Include="1732. Find the Highest Altitude.cs" />
     <Compile Include="2215. Find the Difference of Two Arrays.cs" />
     <Compile Include="283. Move Zeroes.cs" />
