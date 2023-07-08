@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode
 {
@@ -9,7 +10,7 @@ namespace LeetCode
         {
             //sorting
             bool sorting = true;
-            List<int> list = new List<int>();
+            Dictionary<int, int> d = new Dictionary<int, int>();
 
             while (sorting == true)
             {
@@ -44,12 +45,34 @@ namespace LeetCode
                 }
             }
 
-            foreach (int i in arr)
+            for (int k = 0; k < arr.Length; k++)
             {
-                Console.WriteLine(i);
+                if (k == 0)
+                {
+                    d.Add(arr[k], 1);
+                    continue;
+                }
+
+                if (d.ContainsKey(arr[k]))
+                {
+                    d[arr[k]] += 1;
+                }
+                else
+                {
+                    d.Add(arr[k], 1);
+                }
             }
 
-            return true;
+            if (d.Values.Distinct().Count() == d.Count)
+            {
+                Console.WriteLine("Все значения ключей уникальны");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Есть повторяющиеся значения ключей");
+                return false;
+            }
         }
     }
 }
